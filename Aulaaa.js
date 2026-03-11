@@ -115,6 +115,7 @@ console.table(comidasFavoritas);
 // d) Exiba a mesma informação com console.table().
 
 // → Seu código aqui:
+/*
 //A
 const nome = lerTeclado.question('Digite Seu nome ');
 const profissao = lerTeclado.question('Digite sua profissao ');
@@ -126,6 +127,7 @@ console.log(cadastroPessoal);
 
 //C
 console.log(`Me chamo ${nome}. Profissão: ${profissao} e moro na cidade de: ${cidade}.`)
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 7 – Lista de objetos
@@ -141,10 +143,50 @@ console.log(`Me chamo ${nome}. Profissão: ${profissao} e moro na cidade de: ${c
 // g) Exiba somente o nome e a rua do 1º usuário.
 
 // → Seu código aqui:
+/*
+//a
+const usuario1={
+    nome: lerTeclado.question("Digite seu nome:"),
+    idade: lerTeclado.questionInt("Digite sua idade? "),
+    endereco: {
+        cidade: lerTeclado.question("Digite sua cidade: "),
+        rua: lerTeclado.question("Digite sua rua:"),
+        numero: lerTeclado.question("Digite seu numero: ")
+    }
+}
 
+const usuario2={
+    nome: lerTeclado.question("Digite seu nome:"),
+    idade: lerTeclado.questionInt("Digite sua idade? "),
+    endereco: {
+        cidade: lerTeclado.question("Digite sua cidade: "),
+        rua: lerTeclado.question("Digite sua rua:"),
+        numero: lerTeclado.question("Digite seu numero: "),
+    }
+}
 
-console.log("_______________________________");
-
+const usuario3={
+    nome: lerTeclado.question("Digite seu nome:"),
+    idade: lerTeclado.questionInt("Digite sua idade? "),
+    endereco: [ 
+        {
+        cidade: lerTeclado.question("Digite sua cidade: "),
+        rua: lerTeclado.question("Digite sua rua:"),
+        numero: lerTeclado.question("Digite seu numero: "),
+      }
+    ]
+}
+//c
+let listaDeUsuarios= [usuario1,usuario2,usuario3]
+//d
+console.table(listaDeUsuarios)
+//e
+console.log(listaDeUsuarios[1].nome,listaDeUsuarios[1].idade)
+//f
+console.log(listaDeUsuarios[2].endereco)
+//g
+console.log(listaDeUsuarios[0].nome,listaDeUsuarios[0].endereco[0].rua)
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – Ranking de notas
@@ -158,10 +200,37 @@ console.log("_______________________________");
 // g) Exiba o nome e a 3ª nota do 1º aluno.
 
 // → Seu código aqui:
-
-
-console.log("_______________________________");
-
+/*
+//a,b
+const aluno1 = {
+    nome: lerTeclado.question("Digite seu nome:"),
+    notas1: lerTeclado.questionInt("Digite sua nota1: "),
+    notas2: lerTeclado.questionInt("Digite sua nota2: "),
+    notas3: lerTeclado.questionInt("Digite sua nota3: ")
+}
+const aluno2 = {
+    nome: lerTeclado.question("Digite seu nome:"),
+    notas1: lerTeclado.questionInt("Digite sua nota1: "),
+    notas2: lerTeclado.questionInt("Digite sua nota2: "),
+    notas3: lerTeclado.questionInt("Digite sua nota3: ")
+}
+const aluno3 = {
+    nome: lerTeclado.question("Digite seu nome:"),
+    notas1: lerTeclado.questionInt("Digite sua nota1: "),
+    notas2: lerTeclado.questionInt("Digite sua nota2: "),
+    notas3: lerTeclado.questionInt("Digite sua nota3: ")
+}
+//c
+let turma = [aluno1,aluno2,aluno3]
+//d
+console.table(turma)
+//e Exiba o nome e a 1ª nota do 2º aluno
+console.log(turma[1].nome,turma[0].notas1)
+//f Exiba o nome e a 2ª nota do 3º aluno.
+console.log(turma[2].nome,turma[1].notas2)
+//g Exiba o nome e a 3ª nota do 1º aluno
+console.log(turma[0].nome,turma[2].notas3)
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 9 – Cadastro de produto
@@ -179,10 +248,20 @@ console.log("_______________________________");
 //    "Produto: <nome> | Categoria: <categoria> | Estoque: <quantidade> un".
 
 // → Seu código aqui:
-
-
-console.log("_______________________________");
-
+/*
+//a,b
+const produto = {
+    nome: lerTeclado.question("Digite o produto:"),
+    categoria: lerTeclado.question("Digite sua categoria:"),
+    preco: lerTeclado.questionInt("Digite o preco:"),
+    quantidade: lerTeclado.questionInt("Digite a quantidade:"),
+    dispoPVenda: lerTeclado.keyInYN("Esta disponivel para venda?")
+}
+//c
+console.table(produto)
+//d
+console.log(`Produto: ${produto.nome} | Categoria: ${produto.categoria} | Estoque: ${produto.quantidade} un`);
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 10 – Farmacia
@@ -195,3 +274,26 @@ console.log("_______________________________");
 // c) Exiba a lista com console.table().
 // d) Exiba somente o nome e preço do 2 medicamento.
 // e) Exiba somente o nome e se está em estoque o 1 medicamento.
+//a
+let remedio = {
+    nome1: lerTeclado.question("nome do remedio:"),
+    preco: lerTeclado.questionInt("valor:"),
+    emEstoque: lerTeclado.keyInYN("Disponivel no estoque?")
+}
+//b
+let remedio2=[{
+    nome: lerTeclado.question("nome do remedio:"),
+    preco: lerTeclado.questionInt("valor:"),
+    emEstoque: lerTeclado.keyInYN("Disponivel no estoque?")
+}
+    
+]
+
+let estoqueFarmacia=[]
+estoqueFarmacia.push(remedio)
+estoqueFarmacia.push(remedio2)
+
+
+console.table(estoqueFarmacia)
+//f Exiba somente o nome e se está em estoque o 1 medicamento.
+console.log(estoqueFarmacia[0].nome,estoqueFarmacia[0].emEstoque)
