@@ -208,6 +208,16 @@ console.log("_______________________________");
 //    "Média: <media>" (com 2 casas decimais usando toFixed(2))
 
 // → Seu código aqui:
+//a
+let n1 = lerTeclado.questionFloat("Digite a nota 1:")
+let n2 = lerTeclado.questionFloat("Digite a nota 2:")
+let n3 = lerTeclado.questionFloat("Digite a nota 3:")
+//B
+let media = (n1 + n2 + n3) / 3
+//C
+console.log(`Nota1: ${n1}, Nota2${n2}, Nota3 ${n3}`)
+console.log(`Média: ${media.toFixed(2)}`)
+
 
 
 console.log("_______________________________");

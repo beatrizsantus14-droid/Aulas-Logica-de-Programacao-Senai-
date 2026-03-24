@@ -155,7 +155,7 @@ console.log(`Nota final: ${notaFinal}, Precisa de recuperacao? ${precisaRecupera
 */
 console.log("_______________________________");
 
-
+/*
 // ------------------------------------------------------------
 // EXERCÍCIO 6 – Operador ternário
 // ------------------------------------------------------------
@@ -174,7 +174,7 @@ let diagnostico= (temperatura >= 37.6 ? "Febre detectada" : "Temperatura normal"
 console.log(`Diagnostico ${diagnostico}`)
 console.log("_______________________________");
 
-
+*/
 // ------------------------------------------------------------
 // EXERCÍCIO 7 – Operador ternário
 // ------------------------------------------------------------
@@ -183,7 +183,7 @@ console.log("_______________________________");
 //    Se velocidade > limiteVelocidade → "Multa aplicada"
 //    Caso contrário                    → "Velocidade regular"
 // c) Exiba a variável "statusMulta" com template literal mostrando a velocidade e o resultado da multa.
-
+/*
 // → Seu código aqui:
 //a
 let velocidade= 110
@@ -193,7 +193,7 @@ let statusMulta= velocidade > limiteVelocidade ? "Multa aplicada" : "Velocidade 
 //c
 console.log(`Multa? ${statusMulta}`)
 
-
+*/
 console.log("_______________________________");
 
 
@@ -209,7 +209,7 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 //a
-
+/*
 let ehEstudante = lerTeclado.keyInYN("É bolsista?")
 //b
 
@@ -220,7 +220,7 @@ let mensagem = ehEstudante && valor ? "Desconto aplicado!" : "Desconto não apli
 
 //d
 console.log(mensagem)
-
+*/
 
 
 console.log("_______________________________");
@@ -234,20 +234,35 @@ console.log("_______________________________");
 //    - Se possui ingresso (keyInYN()).
 //    - Se é associado ao clube (keyInYN()).
 // b) Armazene e exiba os resultados das seguintes verificações em outro objeto:
-//    - "podeEntrarNormal": (idade maior ou igual a 18 e possuiIngresso) ou ehAssociado
+//    - "podeEntrarNormal": ( idade maior ou iguala 18 e possuiIngresso) ou ehAssociado
 //    - "podeEntrarSocio": possuiIngresso e ehAssociado
 //    - "precisaAcompanhante": idade menor que 18
 //    - "naoPodeEntrar": não possuiIngresso e não ehAssociado
 // c) Exiba a mensagem final usando ternário:
 //    Se podeEntrarNormal ou podeEntrarSocio → "Entrada liberada!"
 //    Caso contrário → "Entrada negada."
-
+/*
 // → Seu código aqui:
-
-
+//A
+let socio = {
+    idade: lerTeclado.questionInt("Digite sua idade:"),
+    ingresso: lerTeclado.keyInYN("Possui ingresso? "),
+    associado: lerTeclado.keyInYN("É associado ao clube?")
+}
+//B
+let entrada= {
+    podeEntrarNormal: (socio.idade >= 18 && socio.ingresso) || socio.associado,
+    podeEntrarSocio: (socio.ingresso && socio.associado),
+    precisaAcompanhante: (socio.idade<= 18),
+    naoPodeEntrar: (socio.ingresso && !socio.associado)
+}
+console.log(entrada)
+//C
+let entrar = (entrada.podeEntrarNormal || entrada.podeEntrarSocio ? "Entrada Liberada" : "Entrada negada")
+console.log(entrar)
 console.log("_______________________________");
 
-
+*/
 // ------------------------------------------------------------
 // EXERCÍCIO 10 – Verificação de estoque com objeto
 // ------------------------------------------------------------
@@ -261,12 +276,22 @@ console.log("_______________________________");
 //    - "produtoDisponivel": temEstoque e está ativo
 //    - "produtoIndisponivel": não temEstoque || não está ativo
 // d) Exiba os resultados com template literal.
-
+/*
 // → Seu código aqui:
-
-
+//A,B
+let produto= {
+    nomeDoProduto: lerTeclado.question("digite o nome do produto:"),
+    emEstoque: lerTeclado.questionInt("Quantidade em estoque:"),
+    sitema: lerTeclado.keyInYN("Está ativo so sistema?")
+}
+//C
+let temEstoque= produto.emEstoque> 0 ? "Tem": "Não tem"
+let produtoDisponivel= (produto.emEstoque && produto.sitema)
+let produtoIndisponivel= (produto.emEstoque || produto.sistema? "Tem em estoque": "Não tem em estoque")
+//D
+Console.log(`Tem o produto em estoque ${temEstoque}, Produto disponivel ${produtoDisponivel}, Produto Indisponivel ${produtoIndisponivel}`)
 console.log("_______________________________");
-
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 11 – Verificação de permissões
@@ -281,10 +306,24 @@ console.log("_______________________________");
 //    - "acessoAdmin": acessoSistema e ehAdmin
 //    - "acessoNegado": não logado ou não contaAtiva
 // d) Exiba todos os resultados.
-
+/*
 // → Seu código aqui:
+//AB
+let usuario = {
+    administrador: lerTeclado.keyInYN("Eh o Administrador?"),
+    logado: lerTeclado.keyInYN("Esta logado?"),
+    contaAtiva: lerTeclado.keyInYN("A conta esta ativa?")
+}
+//C
+let acessoSistema= (usuario.logado && usuario.contaAtiva);
+let acessoAdmin= (acessoSistema && usuario.administrador);
+let acessoNegado= (usuario.logado? "logado" : "não logado" || usuario.contaAtiva? "conta ativa": "conta nao ativa");
+//D
+console.log(acessoSistema);
+console.log(acessoAdmin);
+console.log(acessoNegado);
 
-
+*/
 console.log("_______________________________");
 
 
@@ -306,6 +345,19 @@ console.log("_______________________________");
 //    Caso contrário → "Usuário ou senha incorretos."
 
 // → Seu código aqui:
-
+//A
+let credenciaisSistema = {
+    usuario: "admin",
+    senha: 1234,
+};
+//b
+let usuarioDigitado = lerTeclado.question("Usuario:");
+let senhaDigitada = lerTeclado.questionInt("senha:");
+//c
+let usuarioCorreto = (usuarioDigitado === credenciaisSistema.usuario);
+let senhaCorreta = (senhaDigitada === credenciaisSistema.senha);
+let loginValido = (usuarioCorreto && senhaCorreta);
+//D
+console.log(loginValido? "Login realizado com sucesso!": "Usuário ou senha incorretos.")
 
 console.log("_______________________________");
