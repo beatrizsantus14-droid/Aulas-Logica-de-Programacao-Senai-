@@ -60,7 +60,7 @@ console.log("_______________________________");
 // b) Se a idade for maior ou igual a 18, exiba: "Adulto".
 //    Se a idade for menor que 12, exiba: "Criança".
 //    Senão, exiba: "Jovem".
-/*
+
 // → Seu código aqui:
 const usuario = lerTeclado.questionInt("Digite sua idade: ")
 if(usuario<12){
@@ -73,7 +73,7 @@ if(usuario<12){
 
 
 console.log("_______________________________");
-*/
+
 
 // ------------------------------------------------------------
 // EXERCÍCIO 4 – If / Else If / Else
@@ -115,7 +115,7 @@ console.log("_______________________________");
 //    - temperatura >= 18 e <= 25  → "Agradável"
 //    - temperatura > 25 e <= 35   → "Quente"
 //    - temperatura > 35           → "Muito quente"
-/*
+
 // → Seu código aqui:
 let temperatura= lerTeclado.questionInt("Qual a temperatura?")
 if(temperatura<10){
@@ -133,7 +133,7 @@ if(temperatura<10){
 
 
 console.log("_______________________________");
-*/
+
 
 // ------------------------------------------------------------
 // EXERCÍCIO 6 – If aninhado
@@ -147,7 +147,7 @@ console.log("_______________________________");
 //      - idade < 18  → "Meia-entrada: menor de idade."
 //      - idade >= 60 → "Meia-entrada: melhor idade."
 //      - caso contrário → "Entrada inteira."
-/*
+
 // → Seu código aqui:
 let usuario= {
     nome: lerTeclado.question("Digite seu nome: "),
@@ -169,7 +169,7 @@ if(usuario.idade<18){
 }
 
 console.log("_______________________________");
-*/
+
 
 // ------------------------------------------------------------
 // EXERCÍCIO 7 – If com operadores lógicos (&&)
@@ -182,7 +182,7 @@ console.log("_______________________________");
 // c) Para alugar um carro, o motorista precisa ter 21 anos ou mais E possuir habilitação.
 //    - Se pode alugar → exiba: "<nome>, você pode alugar o veículo."
 //    - Senão          → exiba: "<nome>, você não atende aos requisitos."
-/*
+
 // → Seu código aqui:
 let motorista = {
     nome: lerTeclado.question("Digite seu nome: "),
@@ -197,7 +197,7 @@ if(motorista.idade>=21 && motorista.cnh){
 }
 
 console.log("_______________________________");
-*/
+
 
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – If com operadores lógicos (||)
@@ -207,7 +207,7 @@ console.log("_______________________________");
 //    - Se é idoso, com 60 anos ou mais.
 // b) Se é estudante OU idoso → exiba: "Desconto de 50% aplicado!"
 //    Senão → exiba: "Sem desconto. Preço cheio."
-/*
+
 // → Seu código aqui:
 let usuario = lerTeclado.keyInYN("Eh estudante? ")
 let idade = lerTeclado.keyInYN("Eh idoso?")
@@ -219,7 +219,7 @@ let idade = lerTeclado.keyInYN("Eh idoso?")
 
 
 console.log("_______________________________");
-*/
+
 
 // ------------------------------------------------------------
 // EXERCÍCIO 9 – Sistema de notas completo
@@ -242,12 +242,24 @@ console.log("_______________________________");
 let aluno = {
     nome: lerTeclado.question("Digite seu nome:"),
     np1: lerTeclado.questionInt("Digite nota prova 1:"),
-    np2: lerTeclado.question("Digite nota prova2:")
+    np2: lerTeclado.questionInt("Digite nota prova2:"),
+    situacao:""
 }
 
 let media = (aluno.np1 + aluno.np2)/2
-aluno.media=media 
+aluno.media=media
+
 console.log(aluno)
+
+if(aluno.media>=7){
+    aluno.situacao = "APROVADO"
+}else if(aluno.media>=5){
+    aluno.situacao = "EM RECUPERACAO"
+}else{
+    aluno.situacao= "Reprovado"
+}
+console.log(aluno)
+console.log(`${aluno.nome}, Situacao ${aluno.situacao}`)
 
 console.log("_______________________________");
 
@@ -271,5 +283,40 @@ console.log("_______________________________");
 // g) Chame o professor para realizar alguns testes 🫡
 
 // → Seu código aqui:
+
+
+
+let calculo= {
+    numeroA: lerTeclado.questionFloat("digite um numero"),
+    numeroB: lerTeclado.questionFloat("digite um numero"),
+    operacao: lerTeclado.questionInt("1Soma 2 Subtracao 3Multiplicacao 4Divisao"),
+    simbolo: "",
+    resultado:""
+}
+
+if(calculo.operacao===1){
+    calculo.simbolo = "+"
+    calculo.resultado = calculo.numeroA + calculo.numeroB
+
+}else if(calculo.operacao===2){
+    calculo.simbolo= "-"
+    calculo.resultado= calculo.numeroA - calculo.numeroB
+
+}else if(calculo.operacao=== 3){
+    calculo.simbolo= "*"
+    calculo.resultado= calculo.numeroA * calculo.numeroB
+
+}else if(calculo.operacao===4){
+    if(calculo.numeroB === 0){
+        console.log("erro")
+
+    }else{
+        calculo.resultado=calculo.numeroA/calculo.numeroB
+    }
+}
+console.log(`${calculo.numeroA} ${calculo.simbolo} ${calculo.numeroB} = ${calculo.resultado}`)
+
+
+
 
 console.log("_______________________________");
