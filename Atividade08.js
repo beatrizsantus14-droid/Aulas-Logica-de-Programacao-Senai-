@@ -14,7 +14,7 @@ let lerTeclado = require('readline-sync')
 //    3 = Terra, 4 = Marte, 5 = Júpiter, 6 = Saturno,
 //    7 = Urano, 8 = Netuno).
 // c) No default, exiba: "Planeta não encontrado."
-
+ 
 // → Seu código aqui:
 let planeta = 3
 switch(planeta){
@@ -127,7 +127,7 @@ console.log("_______________________________");
 //    - 2 → "Boa tarde! Turno da tarde."
 //    - 3 → "Boa noite! Turno da noite."
 //    - default → "Opção inválida."
-
+/*
 // → Seu código aqui:
 console.log(` 1 – Manhã | 2 – Tarde | 3 – Noite`)
 let turnos= lerTeclado.questionInt("Escolha o seu turno:")
@@ -148,7 +148,7 @@ switch (turnos){
 
 console.log("_______________________________");
 
-
+*/
 // ------------------------------------------------------------
 // EXERCÍCIO 5 – Switch com input (string)
 // ------------------------------------------------------------
@@ -160,10 +160,26 @@ console.log("_______________________________");
 //    - "inverno"   → "Frio, cobertores e chocolate quente."
 //    - "primavera" → "Flores, calor e renovação."
 //    - default     → "Estação não reconhecida."
-
+/*
 // → Seu código aqui:
-
-
+let estacao = lerTeclado.question("verao,outono, inverno,primavera = ")
+switch(estacao){
+    case "verao":
+        console.log("Dias quentes e férias!")
+        break
+    case  "outono":
+        console.log("Folhas caindo e temperaturas amenas.")
+        break
+    case "inverno":
+        console.log("Frio, cobertores e chocolate quente.")
+        break
+    case "primavera":
+        console.log("Flores, calor e renovação.")
+        break
+    default:
+        console.log("Estação não reconhecida.")
+}
+*/
 
 
 
@@ -182,10 +198,27 @@ console.log("_______________________________");
 // c) Exiba também o nome do dia correspondente (Segunda a Domingo).
 
 // → Seu código aqui:
+/*
+let numero = lerTeclado.questionInt("Digite um numero de 1 a 7: ")
+switch(numero){
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        console.log("Dia Util")
+        break
+    case 6:
+    case 7:
+        console.log("Final de semana")
+        break
+    default:
+        console.log("Número inválido")
+}
 
 
 console.log("_______________________________");
-
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 7 – Switch com objeto
@@ -203,10 +236,43 @@ console.log("_______________________________");
 // c) Exiba o objeto com console.table().
 
 // → Seu código aqui:
+/*
+let produto = {
+    nome: lerTeclado.question("Digite nome do produto:"),
+    categoria: lerTeclado.questionInt("1 Eletronico, | 2 Vestuario, | 3 Alimento, | 4 Livro:"),
+    preco: lerTeclado.questionFloat("Digite o preco:"),
+    descricaoCategoria: null,
+    garantia: null
+}
+
+switch(produto.categoria){
+    case 1:
+        produto.descricaoCategoria = "Eletrônico"
+        produto.garantia = "12 meses"
+        break;
+    case 2:
+        produto.descricaoCategoria = "Vestuario"
+        produto.garantia = "Troca em 30 dias"
+        break;
+    case 3:
+        produto.descricaoCategoria = "Alimento"
+        produto.garantia = "Ver validade"
+        break;
+    case 4:
+        produto.descricaoCategoria = "Livro"
+        produto.garantia = "Sem garantia"
+        break;
+    default:
+        produto.descricaoCategoria = "Categoria invalida"
+        produto.garantia = "Sem garantia"
+        console.log("Categoria inválida.")
+}
+ 
+console.table(produto)
 
 
 console.log("_______________________________");
-
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – Conversor de nota para conceito e cor
@@ -222,10 +288,48 @@ console.log("_______________________________");
 //    - 2, 1 ou 0 → conceito: "F", mensagem: "Reprovado."
 //    - default  → "Nota inválida."
 // c) Exiba: "<nome> – Nota: <nota> | Conceito: <conceito> | <mensagem>"
-
+/*
 // → Seu código aqui:
+let usuario = {
+    nome: lerTeclado.question("Digite seu nome:"),
+    nota: lerTeclado.questionInt("Digite um numero de 0 a 10:"),
+    conceito: null,
+    mensagem: null
+}
 
+switch(usuario.nota){
+    case 10:
+    case 9:
+        usuario.conceito = "A"
+        usuario.mensagem = "Excelente!"
+        break;
+    case 8:
+    case 7:
+        usuario.conceito = "B"
+        usuario.mensagem = "Muito bem !"
+        break;
+    case 6:
+    case 5:
+        usuario.conceito = "C"
+        usuario.mensagem = "Suficiente"
+        break;
+    case 4:
+    case 3:
+        usuario.conceito = "D"
+        usuario.mensagem = "Em recuperacao"
+        break;
+    case 2:
+    case 1:
+        usuario.conceito = "F"
+        usuario.mensagem = "Reprovado"
+        break;
+    default:
+    usuario.conceito = "Nota Invalida"
+    usuario.mensagem = "Nota Invalida"
+}
 
+console.log(`${usuario.nome} – Nota: ${usuario.nota} | Conceito: ${usuario.conceito} | ${usuario.mensagem}`)
+*/
 console.log("_______________________________");
 
 
@@ -241,12 +345,47 @@ console.log("_______________________________");
 //    Se a operação for 4 (divisão) e o divisor for 0, exiba:
 //    "Erro: divisão por zero não é permitida."
 //    No default, exiba: "Operação inválida."
-
+/*
 // → Seu código aqui:
+let num1 = lerTeclado.questionFloat("Digite um numero:")
+let num2 = lerTeclado.questionFloat("Digite um numero:")
 
+console.log("1 Soma | 2  Subtração | 3  Multiplicação | 4  Divisão | 5  Resto")
 
+let operacao = lerTeclado.questionInt("Escolha uma operacao")
+let resultado= null
+let simbolo = null
+
+switch(operacao){
+    case 1:
+        simbolo= "+"
+        resultado = num1 + num2 
+        break;
+    case 2:
+        simbolo= "-"
+        resultado = num1 - num2 
+        break;
+    case 3:
+        simbolo= "*"
+        resultado = num1 * num2 
+        break;
+    case 4:
+        simbolo = "/"
+         resultado = num1 / num2
+         if(operacao === 4 && num1 | num2 === 0 ){
+            console.log("Erro: divisão por zero não é permitida.")
+         }
+            break;
+    case 5:
+        simbolo= "%"
+        resultado = num1 % num2 
+        break;
+    default:
+      console.log("Operação inválida.")
+}
+console.log(operacao)
 console.log("_______________________________");
-
+*/
 
 // ------------------------------------------------------------
 // EXERCÍCIO 10 – Menu de loja completo
@@ -267,5 +406,47 @@ console.log("_______________________________");
 //    - default → exiba: "Opção inválida."
 
 // → Seu código aqui:
+
+
+
+let loja = {
+  nome: "TechShop",
+  saldo: 0
+}
+
+console.log(`\n=== ${loja.nome} ===`);
+console.log("1 – Ver produtos");
+console.log("2 – Comprar");
+console.log("3 – Ver carrinho");
+console.log("4 – Sair");
+
+
+let opcao = lerTeclado.questionInt("Escolha uma opcao: ");
+
+
+switch (opcao) {
+  case 1:
+    const produtos = [
+      { produto: "Mouse", preco: 89.90 },
+      { produto: "Teclado", preco: 149.90 },
+      { produto: "Headset", preco: 199.90 }
+    ]
+    console.table(produtos);
+    break;
+  case 2:
+    let nomeProduto = readline.question("Nome do produto: ");
+    let precoProduto = readline.questionFloat("Preco: ");
+    loja.saldo += precoProduto;
+    console.log("Produto adicionado ao carrinho.");
+    break;
+  case 3:
+    console.log(`Total no carrinho: R$ ${loja.saldo.toFixed(2)}`);
+    break;
+  case 4:
+    console.log("Obrigado por visitar a TechShop!");
+    break;
+  default:
+    console.log("Opção inválida.");
+}
 
 console.log("_______________________________");
